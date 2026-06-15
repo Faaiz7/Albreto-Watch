@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ALBRETO <span>WATCH</span></div>
+    
+        <button class="hamburger-toggle" aria-label="Toggle Navigation" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#collection">Collection</a></li>
+                <li><a href="#repairs">Repairs</a></li>
+                <li><a href="#about">About</a></li>
+                <li id="nav-login-item"><a href="#" id="login-nav-btn">Login</a></li>
+                <li><a href="#store">Find a Store</a></li>
+                <li><a href="#" onclick="toggleTheme()">🌙 Theme</a></li>
+                <li><a href="#" onclick="viewOrderHistory()">📋 Orders</a></li>
+                <li><a href="#" onclick="viewRecentlyViewed()">👁 Recent</a></li>
+                <li class="cart-status" id="cart-nav-btn" style="cursor: pointer;">🛒 Cart <span id="cart-count">0</span></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Two Advertisement Images at the Top -->
+    <div class="advertisement-container">
+        <div class="ad-banner">
+            <img src="Images/Huawei Ads 1.jpg" alt="Rolex Advertisement 1">
+            <div class="ad-overlay">
+                <h2>Smarter Every Day</h2>
+            </div>
+        </div>
+        <div class="ad-banner">
+            <img src="Images/Huawei Ads 2.jpg" alt="Rolex Advertisement 2">
+            <div class="ad-overlay">
+                <h2>Technology Meets Style</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="categories-container" style="display: flex; gap: 10px; overflow-x: auto; padding: 15px 5%; background-color: #fff; white-space: nowrap; -webkit-overflow-scrolling: touch; justify-content: center; align-items: center;">
+        <a href="index.html#collection" class="rolex-nav-link">All Brands</a>
+        <a href="Rolex.html" class="rolex-nav-link">Rolex</a>
+        <a href="Casio.html" class="rolex-nav-link">Casio</a>
+        <a href="Seiko.html" class="rolex-nav-link">Seiko</a>
+        <a href="Apple.html" class="rolex-nav-link">Apple</a>
+        <a href="Tissot.html" class="rolex-nav-link">Tissot</a>
+        <a href="Samsung.html" class="rolex-nav-link">Samsung</a>
+        <a href="Xaomi.html" class="rolex-nav-link">Xiaomi</a>
+        <a href="Huawei.html" class="rolex-nav-link active-brand">Huawei</a>
+        <a href="Omega.html" class="rolex-nav-link">Omega</a>
+    </div>
+<!-- END OF INTERCHANGEABLE BRAND CATEGORY BUTTONS -->
+
+    <!-- Brand Title Banner Section -->
+    <div style="background-color: #111111; text-align: center; padding: 40px 20px; border-bottom: 1px solid #222222; margin-bottom: 20px;">
+        <h1 style="color: #ffffff; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 2.5rem; letter-spacing: 4px; margin: 0; text-transform: uppercase;">
+            Huawei <span style="color: #d4af37;">Elite Wearables</span>
+        </h1>
+        <p style="color: #888888; font-size: 1rem; margin-top: 10px; font-style: italic; letter-spacing: 1px;">Fashion forward precision meets breakthrough battery performance.</p>
+    </div>
+
+    <button class="mobile-filter-btn" onclick="toggleMobileFilters()">
+            <span>⚙️</span>
+            <span id="filter-btn-label">Show Filters</span>
+    </button>
+
+    <!-- Main Content Grid Splits -->
+    <main class="catalog-layout-wrapper">
+        
+        <!-- Left Side Filter Section (Price Range, Men, Women) -->
+        <aside class="filter-sidebar" id="filter-sidebar">
+            <div class="filter-group">
+                <h4>Gender</h4>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="gender-filter" value="men" checked> Men
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="gender-filter" value="women" checked> Women
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Price Range (QAR)</h4>
+                <div class="price-range-inputs">
+                    <input type="number" id="price-min" class="price-box" placeholder="Min" value="0">
+                    <span>-</span>
+                    <input type="number" id="price-max" class="price-box" placeholder="Max" value="100000">
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Discount</h3>
+                <label class="discount-option">
+                    <input type="checkbox"> 10% Off or More
+                </label>
+                <label class="discount-option">
+                    <input type="checkbox"> 25% Off or More
+                </label>
+                <label class="discount-option">
+                    <input type="checkbox"> 50% Off or More
+                </label>
+            </div>
+
+            <!-- Side Nav Trigger Shortcut Box -->
+            <div class="watch-comparison-box">
+                <h3>Watch Comparison</h3>
+                <div id="comparison-dynamic-area">
+                    <p class="comparison-empty">Select up to 3 watches from your collection list to compare specifications directly.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Side Product Layout (Scroll down to see watches) -->
+        <section class="collection" style="padding: 0;">
+            <div class="grid" id="brand-grid">
+                
+                <div class="card" data-gender="men" data-price="750">
+                    <img src="Images/Huawei men 1.jfif" alt="Huawei WATCH GT 6 Pro">
+                    <div class="brand-tag">Huawei</div>
+                    <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                    <h3>Huawei WATCH GT 6 Pro </h3>
+                    <p class="price">QAR 750</p>
+                    <p class="stock in">✔ In Stock</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare-btn" onclick="toggleComparison(this)">Compare</button>
+                </div>
+
+                <div class="card" data-gender="women" data-price="980">
+                    <img src="Images/Huawei women 1.jfif" alt="Huawei WATCH GT 6">
+                    <div class="brand-tag">Huawei</div>
+                    <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                    <h3>Huawei WATCH GT 6</h3>
+                    <p class="price">QAR 980</p>
+                    <p class="stock in">✔ In Stock</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare-btn" onclick="toggleComparison(this)">Compare</button>
+                </div>
+                
+                 <div class="card" data-gender="men" data-price="500" data-discount="50">
+                    <img src="Images/Huawei men 2.jfif" alt="HUAWEI WATCH Ultimate 2">
+                    <div class="brand-tag">Huawei</div>
+                    <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                    <h3>HUAWEI WATCH Ultimate 2</h3>
+                    <p class="price"><span class="original-price">QAR 500</span> QAR 250</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare-btn" onclick="toggleComparison(this)">Compare</button>
+                </div>
+
+                <div class="card" data-gender="women" data-price="800">
+                    <img src="Images/Huawei women 2.jfif" alt="Huawei Watch Fit 5 Pro">
+                    <div class="brand-tag">Huawei</div>
+                    <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                    <h3>Huawei Watch Fit 5 Pro</h3>
+                    <p class="price">QAR 800</p>
+                    <p class="stock in">✔ In Stock</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare-btn" onclick="toggleComparison(this)">Compare</button>
+                </div>
+
+                <div class="card" data-gender="men" data-price="560">
+                    <img src="Images/Huawei men 3.jfif" alt="Huawei WATCH 5">
+                    <div class="brand-tag">Huawei</div>
+                    <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                    <h3>Huawei WATCH 5t</h3>
+                    <p class="price">QAR 560</p>
+                    <p class="stock in">✔ In Stock</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare-btn" onclick="toggleComparison(this)">Compare</button>
+                </div>
+
+                <div class="card" data-gender="women" data-price="999">
+                    <img src="Images/Huawei women 3.jfif" alt="Huawei Watch FIT 5 (Standard Edition)">
+                    <div class="brand-tag">Huawei</div>
+                    <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                    <h3>Huawei Watch FIT 5 (Standard Edition)</h3>
+                    <p class="price">QAR 999</p>
+                    <p class="stock in">✔ In Stock</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare-btn" onclick="toggleComparison(this)">Compare</button>
+                </div>
+
+                <div class="card" data-gender="men" data-price="600">
+                    <img src="Images/Huawei men 4.jfif" alt="Huawei Watch GT Runner 2">
+                    <div class="brand-tag">Huawei</div>
+                    <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                    <h3>Huawei Watch GT Runner 2</h3>
+                    <p class="price">QAR 600</p>
+                    <p class="stock in">✔ In Stock</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare-btn" onclick="toggleComparison(this)">Compare</button>
+                </div>
+
+               
+                <div class="card" data-gender="women" data-price="1200" data-discount="25">
+                    <img src="Images/Huawei women 4.jfif" alt="Huawei LBand 11 Pro">
+                    <div class="brand-tag">Huawei</div>
+                    <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                    <h3>HUawei Band 11 Pro</h3>
+                    <p class="price"><span class="original-price">QAR 1,200</span> QAR 900</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare-btn" onclick="toggleComparison(this)">Compare</button>
+                </div>
+
+                <div class="card" data-gender="men" data-price="650">
+                    <img src="Images/Huawei men 5.jfif" alt="Huawei Watch D2">
+                    <div class="brand-tag">Huawei</div>
+                    <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                    <h3>Huawei Watch D2</h3>
+                    <p class="price">QAR 650</p>
+                    <p class="stock in">✔ In Stock</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare-btn" onclick="toggleComparison(this)">Compare</button>
+                </div>
+
+                <div class="card" data-gender="women" data-price="860" data-discount="10">
+                    <img src="Images/Huawei women 5.jfif" alt="Huawei WATCH GT 5">
+                    <div class="brand-tag">Huawei</div>
+                    <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                    <h3>Huawei WATCH GT 5</h3>
+                    <p class="stock in">✔ In Stock</p>
+                    <p class="price"><span class="original-price">QAR 860</span> QAR 774</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="compare-btn" onclick="toggleComparison(this)">Compare</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Repairs Section -->
+    <section id="repairs" class="repair-section">
+        <div class="repair-image">
+            <img src="https://media.istockphoto.com/id/488786677/photo/close-up-portrait-of-a-watchmaker-at-work.jpg?s=612x612&w=0&k=20&c=YljaUmi8UsA3p6qKAgg-9fxsYe8IP7ekxeHfvY7xiCc=" alt="Expert watchmaker repairing a luxury watch mechanism with precision tools">
+        </div>
+        <div class="repair-content">
+            <h2>Expert Watch <span>Repair</span> & Care</h2>
+            <p>Your luxury timepieces deserve master-level craftsmanship. Our certified horologists handle everything from vintage mechanical restorations to minor electronic calibrations with extreme attention to detail.</p>
+            <ul class="services-list">
+                <li>Complete Movement Overhauls & Polishing</li>
+                <li>Ultrasonic Case & Bracelet Cleaning</li>
+                <li>Precision Battery & Gasket Replacement</li>
+                <li>Water Resistance & Pressure Testing</li>
+            </ul>
+            <a href="https://wa.me/97477320040" target="_blank" class="repair-btn">Book a Repair Appointment</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Albreto Watch</h2>
+        <p>We are dedicated to bringing you the finest selection of global watch brands. Combining elegance, durability, and functionality, our watches are crafted to be more than just a tool to tell time—they are a statement of who you are.</p>
+    </section>
+
+    <!-- Find a Store Section -->
+    <section id="store" class="store-section">
+        <h2 class="store-heading">Visit Our Store</h2>
+        <div class="store-layout-container">
+            <div class="store-details-box">
+                <h3>Albreto Watch Flagship</h3>
+                <p>
+                    <strong>Address:</strong><br>
+                    Luxury Galleria, Parcel 18,<br>
+                    The Pearl-Qatar, Doha, Qatar
+                </p>
+                <p>
+                    <strong>Opening Hours:</strong><br>
+                    Saturday – Thursday: 10:00 AM – 10:00 PM<br>
+                    Friday: 2:00 PM – 11:00 PM
+                </p>
+                <p>
+                    <strong>Contact Details:</strong><br>
+                    📞 +974 7732 0040<br>
+                    ✉️ Albreto@albretowatch.com
+                </p>
+                <a href="https://wa.me/97477320040" target="_blank" class="store-whatsapp-btn">Chat with US</a>
+            </div>
+            <div class="store-map-box">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.312784845945!2d51.5498426!3d25.3775677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c004ca389c2d%3A0x2f97a5b158097d8b!2sThe%20Pearl-Qatar!5e0!3m2!1sen!2sqa!4v1710000000000!5m2!1sen!2sqa"
+                    width="100%"
+                    height="350"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Albreto Watch. Built for Beginners.</p>
+    </footer>
+
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-modal" id="close-login">&times;</span>
+            <h2>Sign In to Account</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username / Email</label>
+                    <input type="text" id="username" placeholder="Enter any name..." required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter any password..." required>
+                </div>
+                <button type="submit" class="modal-submit-btn">Login Now</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="cart-overlay-panel">
+        <div class="cart-panel-box">
+            <div class="cart-panel-header">
+                <h2>Your Shopping Cart</h2>
+                <span class="close-cart-panel" id="close-cart">&times;</span>
+            </div>
+            <div id="cart-items-wrapper">
+                <p class="empty-cart-msg">Your shopping cart is currently empty.</p>
+            </div>
+
+              <!-- COUPON INPUT -->
+            <div style="padding: 10px 0;">
+                <input type="text" id="coupon-code" placeholder="Enter Coupon Code" style="width: 65%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                <button id="apply-coupon" style="width: 30%; padding: 8px; background: #111; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-left: 5px;">Apply</button>
+            </div>
+            
+            <div class="cart-panel-footer">
+                <div class="cart-total-row">
+                    <span>Total Estimated:</span>
+                    <span id="cart-total-amount">QAR 0</span>
+                </div>
+                <button id="checkout-btn" class="checkout-action-btn">Continue with Purchase</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const genderChecks = document.querySelectorAll('.gender-filter');
+        const minPrice = document.getElementById('price-min');
+        const maxPrice = document.getElementById('price-max');
+        const cards = document.querySelectorAll('#brand-grid .card');
+
+        function runFilters() {
+            const checkedGenders = Array.from(genderChecks).filter(c => c.checked).map(c => c.value);
+            const min = parseFloat(minPrice.value) || 0;
+            const max = parseFloat(maxPrice.value) || Infinity;
+
+            cards.forEach(card => {
+                const cardGender = card.getAttribute('data-gender');
+                const cardPrice = parseFloat(card.getAttribute('data-price'));
+
+                const genderMatch = checkedGenders.includes(cardGender);
+                const priceMatch = cardPrice >= min && cardPrice <= max;
+
+                if (genderMatch && priceMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        genderChecks.forEach(c => c.addEventListener('change', runFilters));
+        minPrice.addEventListener('input', runFilters);
+        maxPrice.addEventListener('input', runFilters);
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

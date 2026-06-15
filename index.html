@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALbreto Watch | Luxury Watches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="announcement-bar">
+        🎉 SUMMER SALE — Up to 40% off selected brands! | Free shipping on orders over QAR 500 | 📞 +974 7732 0040
+    </div>
+
+    <header>
+        <div class="logo">ALBRETO <span>WATCH</span></div>
+        
+        <button class="hamburger-toggle" aria-label="Toggle Navigation" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#repairs">Repairs</a></li>
+                <li><a href="#about">About</a></li>
+                <li id="nav-login-item"><a href="#" id="login-nav-btn">Login</a></li>
+                <li><a href="index.html#store">Find a Store</a></li>
+                <li><a href="#" onclick="toggleTheme()">🌙 Theme</a></li>
+                <li><a href="#" onclick="viewOrderHistory()">📋 Orders</a></li>
+                <li><a href="#" onclick="viewRecentlyViewed()">👁 Recent</a></li>
+                <li class="cart-status" id="cart-nav-btn" style="cursor: pointer;">🛒 Cart <span id="cart-count">0</span></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover Premium Timepieces</h1>
+            <p>Explore our exclusive collection of luxury and smart watches tailored for your style.</p>
+            <a href="#collection" class="btn">Shop Now</a>
+        </div>
+    </section>
+    
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search for watches...">
+            <button class="search-btn">Search</button>
+        </div>
+    </div>
+
+    <div class="categories-container">
+        <a href="index.html#collection" class="category-badge active" style="text-decoration: none;">All Brands</a>
+        <a href="Rolex.html" class="category-badge" style="text-decoration: none;">Rolex</a>
+        <a href="Casio.html" class="category-badge" style="text-decoration: none;">Casio</a>
+        <a href="Seiko.html" class="category-badge" style="text-decoration: none;">Seiko</a>
+        <a href="Apple.html" class="category-badge" style="text-decoration: none;">Apple</a>
+        <a href="Tissot.html" class="category-badge" style="text-decoration: none;">Tissot</a>
+        <a href="Samsung.html" class="category-badge" style="text-decoration: none;">Samsung</a>
+        <a href="Xaomi.html" class="category-badge" style="text-decoration: none;">Xiaomi</a>
+        <a href="Huawei.html" class="category-badge" style="text-decoration: none;">Huawei</a>
+        <a href="Omega.html" class="category-badge" style="text-decoration: none;">Omega</a>
+    </div>
+
+    <section class="promo-slider-section">
+        <div class="slider-wrapper">
+            <div class="main-slider" id="homeAdSlider">
+               
+                <div class="slide active-slide">
+                    <img src="Images/R home Ads.jpg" alt="Luxury Masterpieces Banner">
+                    <div class="slide-overlay-content">
+                        <h2>The Luxury Collection</h2>
+                        <p>Experience uncompromised horological mastery & prestige.</p>
+                        <a href="#collection" class="slide-action-btn">Explore Masterpieces</a>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="Images/O home ADs.jpg" alt="Exclusive Summer Promotional Banner">
+                    <div class="slide-overlay-content">
+                        <h2>Exclusive Seasonal Deals</h2>
+                        <p>Elevate your statement with up to 40% off selected tier brands.</p>
+                        <a href="#collection" class="slide-action-btn">Shop Special Pricing</a>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="Images/H home ADs.jpg" alt="Smart Technology Banner">
+                    <div class="slide-overlay-content">
+                        <h2>Next-Gen Precision</h2>
+                        <p>Where cutting-edge technology meets classic watchmaking design.</p>
+                        <a href="#collection" class="slide-action-btn">View Smart Devices</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="slider-dots-indicator" id="sliderDotsContainer">
+                <span class="dot active-dot" onclick="jumpToSlide(0)"></span>
+                <span class="dot" onclick="jumpToSlide(1)"></span>
+                <span class="dot" onclick="jumpToSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="collection" class="collection">
+        <h2>Featured Collection</h2>
+        <div class="grid" id="product-grid">
+
+            <div class="native-vertical-ad">
+                <img src="Images/Advertisement h1.jpg" class="ad-bg">
+                <div class="ad-tint"></div>
+                <div class="ad-body">
+                    <span class="ad-tag">Boutique Exclusive</span>
+                    <h3>The Oyster Perpetual</h3>
+                    <p>Experience unmatched mechanical wrist presence.</p>
+                    <a href="#store">Book Viewing →</a>
+                </div>
+            </div>
+               
+            <div class="card" data-brand="rolex">
+                <img src="Images/Home img.jpg" alt="Rolex Submariner Gold">
+                <div class="brand-tag">Rolex</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Rolex Submariner</h3>
+                <p class="price">QAR 45,000</p>
+                <p class="stock in">✔ In Stock</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+               
+            <div class="card" data-brand="rolex">
+                <img src="Images/Home img 2.jpg" alt="Rolex Datejust">
+                <div class="brand-tag">Rolex</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Rolex Datejust</h3>
+                <p class="price">QAR 32,500</p>
+                <p class="stock in">✔ In Stock</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="card" data-brand="casio">
+                <img src="Images/home img 3.jpeg" alt="Casio Edifice Vintage">
+                <div class="brand-tag">Casio</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Casio Edifice</h3>
+                <p class="price">QAR 700</p>
+                <p class="stock in">✔ In Stock</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+               
+            <div class="card" data-brand="casio">
+                <img src="Images/home img 4.jpg" alt="Casio Minimalist Black">
+                <div class="brand-tag">Casio</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Casio Black Edition</h3>
+                <p class="price">QAR 900</p>
+                <p class="stock out">✖ Out of Stock</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="card" data-brand="seiko">
+                <img src="Images/home img 5.jpg" alt="Seiko Prospex">
+                <div class="brand-tag">Seiko</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Prospex Automatic</h3>
+                <p class="price">QAR 400</p>
+                <p class="stock out">✖ Out of Stock</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="card" data-brand="apple">
+                <img src="Images/home img 6.jpg" alt="Apple Watch Ultra">
+                <div class="brand-tag">Apple</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Apple Watch Ultra</h3>
+                <p class="price"><span class="original-price">QAR 2,190</span> QAR 1,642</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+               
+            <div class="card" data-brand="apple">
+                <img src="Images/home image 7.jpg" alt="Apple Watch Sport">
+                <div class="brand-tag">Apple</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Apple Watch Sport</h3>
+                <p class="price">QAR 1,490</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="card" data-brand="tissot">
+                <img src="Images/home img 8.jpg" alt="Tissot Chrono XL">
+                <div class="brand-tag">Tissot</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Chrono XL Classic</h3>
+                <p class="price">QAR 1,650</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="card" data-brand="samsung">
+                <img src="Images/home img 9.jpg" alt="Samsung Galaxy Watch 6 Ultra">
+                <div class="brand-tag">Samsung</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Galaxy Watch 6 Ultra</h3>
+                <p class="price"><span class="original-price">QAR 1,599</span> QAR 1,199</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="card" data-brand="samsung">
+                <img src="Images/home img 10.jpg" alt="Samsung Galaxy Watch Classic">
+                <div class="brand-tag">Samsung</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Galaxy Watch Classic</h3>
+                <p class="price">QAR 1,249</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="card" data-brand="xiaomi">
+                <img src="Images/home img 11.jpg" alt="Xiaomi Watch S3 Active">
+                <div class="brand-tag">Xiaomi</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Xiaomi Watch S3 Active</h3>
+                <p class="price">QAR 549</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="card" data-brand="huawei">
+                <img src="Images/home img 12.jpg" alt="Huawei Watch GT 4 Pro">
+                <div class="brand-tag">Huawei</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Huawei Watch GT 4 Pro</h3>
+                <p class="price">QAR 999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+               
+            <div class="card" data-brand="huawei">
+                <img src="Images/home img 15.jpg" alt="Huawei Watch Fit">
+                <div class="brand-tag">Huawei</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Huawei Watch Fit</h3>
+                <p class="price">QAR 750</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="card" data-brand="omega">
+                <img src="Images/home img 13.jpg" alt="Omega Seamaster 300">
+                <div class="brand-tag">Omega</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Omega Seamaster 300</h3>
+                <p class="price">QAR 8,400</p>
+                <p class="stock out">✖ Out of Stock</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="card" data-brand="omega">
+                <img src="Images/home img 14.jpg" alt="Omega Speedmaster">
+                <div class="brand-tag">Omega</div>
+                <button class="wishlist-btn" onclick="addToWishlist(this.closest('.card').querySelector('h3').innerText)">+ Wishlist</button>
+                <h3>Omega Speedmaster</h3>
+                <p class="price">QAR 2,200</p>
+                <p class="stock out">✖ Out of Stock</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="inline-ad horizontal-ad">
+                <img src="Images/Advertisement H2.jpg" alt="Smart Collection Banner">
+                <div class="inline-ad-content">
+                    <span class="ad-badge">Special Promo</span>
+                    <h3>Upgrade To Intelligent Precision</h3>
+                    <p>Get up to 25% cashback on elite series Apple & Samsung smartwatches this week.</p>
+                    <a href="#collection" class="ad-link">Claim Deal</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="repairs" class="repair-section">
+        <div class="repair-image">
+            <img src="https://media.istockphoto.com/id/488786677/photo/close-up-portrait-of-a-watchmaker-at-work.jpg?s=612x612&w=0&k=20&c=YljaUmi8UsA3p6qKAgg-9fxsYe8IP7ekxeHfvY7xiCc=" alt="Expert watchmaker repairing a luxury watch mechanism with precision tools">
+        </div>
+        <div class="repair-content">
+            <h2>Expert Watch <span>Repair</span> & Care</h2>
+            <p>Your luxury timepieces deserve master-level craftsmanship. Our certified horologists handle everything from vintage mechanical restorations to minor electronic calibrations with extreme attention to detail.</p>
+            <ul class="services-list">
+                <li>Complete Movement Overhauls & Polishing</li>
+                <li>Ultrasonic Case & Bracelet Cleaning</li>
+                <li>Precision Battery & Gasket Replacement</li>
+                <li>Water Resistance & Pressure Testing</li>
+            </ul>
+            <a href="https://wa.me/97477320040" target="_blank" class="repair-btn">Book a Repair Appointment</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Albreto Watch</h2>
+        <p>We are dedicated to bringing you the finest selection of global watch brands. Combining elegance, durability, and functionality, our watches are crafted to be more than just a tool to tell time—they are a statement of who you are.</p>
+    </section>
+
+    <section id="store" class="store-section">
+        <h2 class="store-heading">Visit Our Store</h2>
+        <div class="store-layout-container">
+            <div class="store-details-box">
+                <h3>Albreto Watch Flagship</h3>
+                <p>
+                    <strong>Address:</strong><br>
+                    Luxury Galleria, Parcel 18,<br>
+                    The Pearl-Qatar, Doha, Qatar
+                </p>
+                <p>
+                    <strong>Opening Hours:</strong><br>
+                    Saturday – Thursday: 10:00 AM – 10:00 PM<br>
+                    Friday: 2:00 PM – 11:00 PM
+                </p>
+                <p>
+                    <strong>Contact Details:</strong><br>
+                    📞 +974 7732 0040<br>
+                    ✉️ Albreto@albretowatch.com
+                </p>
+                <a href="https://wa.me/97477320040" target="_blank" class="store-whatsapp-btn">Chat with US</a>
+            </div>
+            <div class="store-map-box">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.312784845945!2d51.5498426!3d25.3775677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c004ca389c2d%3A0x2f97a5b158097d8b!2sThe%20Pearl-Qatar!5e0!3m2!1sen!2sqa!4v1710000000000!5m2!1sen!2sqa"
+                    width="100%"
+                    height="350"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews-section">
+        <p class="reviews-tag">TESTIMONIALS</p>
+        <h2>What Our Collectors Say<span class="title-line"></span></h2>
+        <div class="reviews-container">
+            <div class="reviews-wrapper" id="reviewsWrapper"></div>
+        </div>
+   </section>
+
+    <div class="subscribe-banner">
+        <p class="sub-tag">LIMITED TIME OFFER</p>
+        <h2>Get 15% Off Your First Purchase</h2>
+        <p>Subscribe to our newsletter and receive exclusive deals, early access & expert watch care tips.</p>
+        <div class="sub-form">
+            <input type="email" placeholder="Enter your email address...">
+            <button>Subscribe</button>
+        </div>
+    </div>
+
+    <div class="trust-container">
+        <p class="trust-tag">Why Choose Us</p>
+        <h2>The Albreto Promise</h2>
+        <div class="trust-grid">
+            <div class="trust-card">
+                <div class="icon">🚚</div>
+                <h3>Free Express Delivery</h3>
+                <p>Complimentary insured shipping on all orders over QAR 500. Same-day Watches collection available.</p>
+            </div>
+            <div class="trust-card">
+                <div class="icon">🛡️</div>
+                <h3>2-Year Warranty</h3>
+                <p>Every timepiece comes with a certified 2-year warranty and free servicing within the first year.</p>
+            </div>
+            <div class="trust-card">
+                <div class="icon">💎</div>
+                <h3>100% Authentic</h3>
+                <p>All watches sourced directly from official brand distributors with serial verification included.</p>
+            </div>
+            <div class="trust-card">
+                <div class="icon">🔄</div>
+                <h3>30-Day Returns</h3>
+                <p>Not satisfied? Return your unworn watch within 30 days for a full refund — no questions asked.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="promo-strip">
+        <img src="Images/Omega men 3.jpg" alt="Omega 300M 007 Edition (2020)">
+        <div class="strip-overlay"></div>
+        <div class="strip-content">
+            <span class="tag">FLASH SALE — TODAY ONLY</span>
+            <h2>Omega 300M 007 Edition </h2>
+            <p>Save up to QAR 590 on certified pre-owned Omega pieces. Limited stock available.</p>
+            <a href="Omega.html" class="category-badge" style="text-decoration: none;">Shop for Sale</a>
+        </div>
+    </div>
+
+    <div class="dual-promo-grid">
+        <div class="panel">
+            <img src="Images/Advertisement B 1.jpg" alt="Mechanical">
+            <div class="panel-overlay"></div>
+            <div class="panel-content">
+                <p>New Arrivals</p>
+                <h3>Luxury Mechanical<br>Collection 2026</h3>
+                <a href="#collection" class="gold-btn-sm">Shop Now →</a>
+            </div>
+        </div>
+        <div class="panel">
+            <img src="Images/apple-vs-samsung.jpg" alt="Digital Wear">
+            <div class="panel-overlay"></div>
+            <div class="panel-content">
+                <p>Smart Series</p>
+                <h3>Apple & Samsung<br>Up to 25% Off</h3>
+                <a href="#collection" class="gold-btn-sm">Claim Deal →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Albreto Watch. Built for Beginners.</p>
+    </footer>
+
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-modal" id="close-login">×</span>
+            <h2>Sign In to Account</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username / Email</label>
+                    <input type="text" id="username" placeholder="Enter any name..." required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter any password..." required>
+                </div>
+                <button type="submit" class="modal-submit-btn">Login Now</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="cart-overlay-panel">
+        <div class="cart-panel-box">
+            <div class="cart-panel-header">
+                <h2>Your Shopping Cart</h2>
+                <span class="close-cart-panel" id="close-cart">×</span>
+            </div>
+            <div id="cart-items-wrapper">
+                <p class="empty-cart-msg">Your shopping cart is currently empty.</p>
+            </div>
+
+              <!-- COUPON INPUT -->
+            <div style="padding: 10px 0;">
+                <input type="text" id="coupon-code" placeholder="Enter Coupon Code" style="width: 65%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                <button id="apply-coupon" style="width: 30%; padding: 8px; background: #111; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-left: 5px;">Apply</button>
+            </div>
+
+            <div class="cart-panel-footer">
+                <div class="cart-total-row">
+                    <span>Total Estimated:</span>
+                    <span id="cart-total-amount">QAR 0</span>
+                </div>
+                <button id="checkout-btn" class="checkout-action-btn">Continue with Purchase</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
